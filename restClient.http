@@ -1,0 +1,43 @@
+@entryPoint = http://localhost:4100
+
+###
+GET {{entryPoint}}
+Content-Type: application/json
+
+#* USERS
+
+###~ALL
+GET {{entryPoint}}/users
+Content-Type: application/json
+
+###~ONE
+GET {{entryPoint}}/users/6309b9164b1a9959cab3f407
+Content-Type: application/json
+
+###~SIGNUP
+POST {{entryPoint}}/signup
+Content-Type: application/json
+
+{
+   "username": "admin",
+   "email": "admin@admin-account.com",
+   "password": "aze&AZE123",
+   "passwordConfirm": "aze&AZE123"
+
+}
+
+#^ ------------------------ updateUser
+###
+PATCH {{entryPoint}}/users/6309b9164b1a9959cab3f407
+Content-Type: application/json
+
+{
+    "username": "Yumedo",
+    "email": "yumedo@survivor.com"
+}
+
+
+#^ ------------------------ deleteUser
+###
+DELETE {{entryPoint}}/users/6309b938c091e80ba737b11c
+Content-Type: application/json
